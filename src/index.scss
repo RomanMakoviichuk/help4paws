@@ -1,0 +1,59 @@
+@use "./styles/mixins.scss" as mixins;
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+
+:root {
+	--spanish-gray: #969696;
+	--cultured: #f6f6f6;
+	--white: #fff;
+	--black: #000000;
+	--earie-black:#1b1b1b;
+	--green: rgba(16, 185, 129, 0.6);
+	--gradient: linear-gradient(to right, #3fe8ab, #78cdcc);
+}
+
+*, *::before, *::after {
+	padding: 0;
+	margin: 0;
+	box-sizing: inherit;
+	outline: none;
+	text-decoration: none;
+	list-style: none;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	box-sizing: border-box;
+	overflow-x: hidden;
+	line-height: 1.5;
+	font-family: "Merriweather", sans-serif;
+	color: var(--spanish-gray);
+	background-color: var(--black);
+}
+
+img {
+	display: block;
+}
+
+h1,h2,h3,h4,h5,h6,a,p {
+	color: var(--cultured);
+}
+
+.wrapper {
+	max-width: 1440px;
+	margin-inline: auto;
+	padding-inline: 5rem;
+
+
+	@include mixins.respond(tab-land) {
+		padding-inline: 2rem;
+	}
+
+	@include mixins.respond(phone) {
+		padding-inline: 0.8rem;
+	}
+	
+}

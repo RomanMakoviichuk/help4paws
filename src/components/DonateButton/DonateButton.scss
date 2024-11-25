@@ -1,0 +1,64 @@
+@use '../../styles/mixins.scss' as *;
+
+
+.btn {
+	background: var(--black);
+	padding: 0.7em 2em;
+	font-weight: 500;
+	color: var(--white);
+	font-size: 1.4rem;
+	text-transform: uppercase;
+	border: none;
+	overflow: hidden;
+	border-radius: 0.6em;
+	cursor: pointer;
+	transition:  all  0.3s ease;
+	display: inline-block;
+	position: relative;
+	@include respond (phone) {
+		font-size: 1.3rem;
+	}
+
+
+	.gradient {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		left: 0;
+		top: 0;
+		border-radius: inherit;
+		margin-top: -0.25em;
+		background-image: linear-gradient(
+		  rgba(0, 0, 0, 0),
+		  rgba(0, 0, 0, 0),
+		  rgba(0, 0, 0, 0.3)
+		);
+	 }
+  
+	 .label {
+		position: relative;
+		top: -1px;
+	 }
+  
+	 .transition {
+		transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+		transition-duration: 500ms;
+		background-color: rgba(16, 185, 129, 0.6);
+		border-radius: 9999px;
+		width: 0;
+		height: 0;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+	 }
+  
+	 &:hover .transition {
+		width: 14em;
+		height: 14em;
+	 }
+  
+	 &:active {
+		transform: scale(0.97);
+	 }
+  }

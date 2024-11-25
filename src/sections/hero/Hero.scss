@@ -1,0 +1,111 @@
+@use '../../styles/mixins' as *;
+
+
+
+.hero {
+	padding-block: 4rem;
+	height: auto;
+	@include respond(tab-land) {
+		padding-block: 0.1rem;
+	}
+	&__container {
+		margin-top: 7rem;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 3rem;
+		@include respond(tab-land) {
+			flex-direction: column-reverse;
+			text-align: center;
+		}
+		@include respond(phone) {
+			margin-top: 5rem;
+		}
+	}
+
+	&__left {
+	width: 30%;
+	img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	height: 100vh;
+	@include respond(phone) {
+		top: 15%;
+
+	}
+	}
+	@include respond (tab-land) {
+		margin-inline: auto;
+		img {
+			width: 100%;
+			height: auto;
+			
+		}
+	}
+	}
+
+	&__right {
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+	@include respond (tab-land) {
+		width: 70%;
+	}
+	h1 {
+		margin-top: 4rem;
+		font-size: 2rem;
+		letter-spacing: 2px;
+		@include respond (tab-land) {
+			font-size: 1.8rem;
+			margin-top: 0rem;
+		}
+		@include respond(phone) {
+			font-size: 1.4rem;
+		}
+	}
+	p {
+		font-size: 0.8rem;
+		font-weight: 300;
+		align-self: self-start;
+		@include respond (tab-land) {
+			align-self: center;
+		}
+	}
+	img {
+		width: 10rem;
+	}
+
+	.monobank-info {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-top: 3rem;
+		background: var(--cultured);
+		padding: 2rem;
+		border-radius: 2rem;
+
+	}
+	.monobank-title {
+		border-bottom: 1px solid var(--cultured);
+		padding-bottom: 0.5rem;
+		color: var(--black);
+		font-weight: 800;
+		border-bottom: 1px solid var(--black);
+	}
+	.monobank-image {
+		margin: 1rem 0;
+	}
+
+	.monobank-count {
+		padding-top: 0.8rem;
+		font-size: 2rem;
+		text-align: center;
+		color: var(--black);
+	}
+	}
+
+}
